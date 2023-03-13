@@ -1,19 +1,12 @@
+import scala.io.StdIn.readLine
+
 object assig1 extends App{
-println("Enter the size of Array")
-  val n = scala.io.StdIn.readInt();
 
-  val arr = new Array[Int](n)
-  println("Enter  the elements of the Array")
-  var ans=0
-  for(i <- 0 to n-1){
-    val x = scala.io.StdIn.readInt()
-    arr(i)=x
-    val y = scala.math.sqrt(x)
-    val z = y.toInt
-    if (x == z * z) {
-      ans = ans + 1
-    }
-  }
+  val input: String = scala.io.StdIn.readLine();
 
-  println(s"The count of perfect squares is $ans")
+  val array = input.split(" ").map(x => x.toInt)
+
+  val count = array.count(x => Math.sqrt(x) % 1 == 0)
+
+  println(s"The count of perfect squares is $count")
 }
