@@ -3,7 +3,7 @@ object HelloWorld {
   
   def helper(x:Int):Boolean={
     
-    var temp=sqrt(x);
+    val temp=sqrt(x);
     return (temp*temp==x)
    return false;
   }
@@ -11,8 +11,16 @@ object HelloWorld {
   
 	def main(args: Array[String]): Unit = {
 	
-	
-	var no=Array(1,4,7,9,16,25,36,49);
+	println("Enter the size of array->");
+	var n = scala.io.StdIn.readInt();
+    var no=new Array[Int](n);
+
+    println("Enter the array->");
+
+    for(i<-0 to n-1){
+        val x=scala.io.StdIn.readInt();
+        no(i)=x;
+        }
 	
 	var count=0;
 	for( i<- no)
@@ -20,6 +28,7 @@ object HelloWorld {
 	if(helper(i)==true)
 	count=count+1;
 	}
+	println("total no of perfect sqaures are->")
 	println(count);
 
 	}
