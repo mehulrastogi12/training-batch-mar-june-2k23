@@ -3,6 +3,7 @@ import scala.io.StdIn.readLine
 import scala.math._
 object MainClass {
 
+  // tailrec ensures that the recursive function is tail recursive otherwise it will throw an error
   @tailrec
   private def factorial(x: Int, fac:Int): Int = {
     if (x <= 1)
