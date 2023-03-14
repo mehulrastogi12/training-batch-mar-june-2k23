@@ -1,0 +1,12 @@
+import scala.io.StdIn.readLine
+
+object assig1 extends App{
+
+  val input: String = scala.io.StdIn.readLine();
+
+  val array = input.split(" ").map(x => x.toInt)
+
+  val count = array.count(x => Math.sqrt(x) % 1 == 0)
+
+  println(s"The count of perfect squares is $count")
+}
