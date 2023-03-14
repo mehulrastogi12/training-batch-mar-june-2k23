@@ -1,2 +1,4 @@
-/.idea/
-/.bsp/
+*.class
+*.log
+*.idea
+*.bsp
