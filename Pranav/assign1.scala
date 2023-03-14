@@ -1,17 +1,15 @@
 object Assignment1 extends App{
   def countPerfectSquares(arr: Array[Int]): Int = {
-    var count = 0
-    for (i <- arr) {
-      val sqrt = math.sqrt(i)
-      if (sqrt == sqrt.toInt) {
-        count += 1
-      }
+    def isPerfectSquare(n: Int): Boolean = {
+      val sqrtN = math.sqrt(n).toInt
+      sqrtN * sqrtN == n
     }
-    count
+
+    arr.count(isPerfectSquare)
   }
 
   val arr = Array(1, 4, 9, 16, 25, 36, 49)
-  val numPerfectSquares = countPerfectSquares(arr)
-  println(s"The number of perfect squares in $arr is $numPerfectSquares")
+  val count = countPerfectSquares(arr)
+  println(s"There are $count perfect squares in the array")
 }
 
